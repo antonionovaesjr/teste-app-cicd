@@ -19,7 +19,7 @@ pipeline {
      stage ('Maven and Docker Build') {
          steps {
             sh '''
-            docker build -t ${CRONAPP_DOCKER_IMAGE_NAME}:${CRONAPP_TAG_VERSION}-${CRONAPP_TIER} --build-arg TIER=${CRONAPP_TIER} CONTEXT_USE=${CRONAPP_USE_CONTEXT} .
+            docker build -t ${CRONAPP_DOCKER_IMAGE_NAME}:${CRONAPP_TAG_VERSION}-${CRONAPP_TIER} --build-arg TIER=${CRONAPP_TIER} --build-arg CONTEXT_USE=${CRONAPP_USE_CONTEXT} .
             '''
       }
     }
