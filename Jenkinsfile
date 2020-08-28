@@ -34,5 +34,12 @@ pipeline {
          
         }
       }
+    stage ('Docker Clean') {
+         steps {
+                sh '''
+                docker rmi $(docker images -f "dangling=true" -q)
+                '''
+        }
+      }
    }
 }
