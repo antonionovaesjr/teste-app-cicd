@@ -16,7 +16,4 @@ FROM tomcat:9.0.17-jre11
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-#COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 COPY --from=maven_builder /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
-# ola
-# new edir
